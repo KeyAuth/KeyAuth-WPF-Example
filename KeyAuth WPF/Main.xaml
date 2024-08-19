@@ -1,0 +1,28 @@
+﻿<Window x:Class="KeyAuth_WPF_Example.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeyAuth_WPF_Example"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="800"
+        Background="#09090d"
+        Loaded="Main_Loaded">
+    <Grid>
+        <ListView x:Name="onlineUsersField" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="519,36,10,67">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="userDataField" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,36,519,67">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

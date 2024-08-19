@@ -1,0 +1,26 @@
+﻿<Window x:Class="KeyAuth_WPF_Example.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeyAuth_WPF_Example"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800"
+        Background="#09090d"
+        Loaded="Login_Loaded">
+    <Grid>
+        <Label x:Name="welcomeLbl" Content="KeyAuth" HorizontalAlignment="Left" Margin="62,136,0,0" VerticalAlignment="Top" Foreground="#FF1A56DB" Height="46" FontSize="24" Width="115" FontWeight="Bold"/>
+        <Label x:Name="welcomeLbl_Copy" Content="Official WPF Example&#xD;&#xA;" HorizontalAlignment="Left" Margin="62,171,0,0" VerticalAlignment="Top" Foreground="White" Height="46" FontSize="24" Width="267" FontWeight="Bold"/>
+        
+        <TextBox x:Name="usernameField" HorizontalAlignment="Left" Margin="466,148,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="252" Height="23"/>
+        <TextBox x:Name="passwordField" HorizontalAlignment="Left" Margin="466,185,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="252" Height="23"/>
+        <TextBox x:Name="licenseField" HorizontalAlignment="Left" Margin="466,226,0,0" TextWrapping="Wrap" Text="License" VerticalAlignment="Top" Width="252" Height="23"/>
+        <TextBox x:Name="emailField" HorizontalAlignment="Left" Margin="466,268,0,0" TextWrapping="Wrap" Text="Email (optional)" VerticalAlignment="Top" Width="252" Height="23"/>
+
+        <Button x:Name="loginBtn" Content="Login" HorizontalAlignment="Left" Margin="466,318,0,0" VerticalAlignment="Top" Width="112" Click="loginBtn_Click" Background="#FF1A56DB"/>
+        <Button x:Name="registerBtn" Content="Register" HorizontalAlignment="Left" Margin="606,318,0,0" VerticalAlignment="Top" Width="112" Click="registerBtn_Click" Background="#FF1A56DB"/>
+        <Button x:Name="upgradeBtn" Content="Upgrade" HorizontalAlignment="Left" Margin="466,343,0,0" VerticalAlignment="Top" Width="112" Click="upgradeBtn_Click" Background="#FF1A56DB"/>
+        <Button x:Name="licenseBtn" Content="License Login" HorizontalAlignment="Left" Margin="606,343,0,0" VerticalAlignment="Top" Width="112" Click="licenseBtn_Click" Background="#FF1A56DB"/>
+        <Button x:Name="forgotPasswordBtn" Content="Forgot Password?" HorizontalAlignment="Left" Margin="536,382,0,0" VerticalAlignment="Top" Width="112" Click="forgotPasswordBtn_Click" Background="#FF1A56DB"/>
+    </Grid>
+</Window>
