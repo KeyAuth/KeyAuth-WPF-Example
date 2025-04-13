@@ -51,7 +51,6 @@ It'll provide you with the code which you should replace with in the `Program.cs
 public static api KeyAuthApp = new api(
     name: "",
     ownerid: "",
-    secret: "",
     version: ""
     path: ""
 );
