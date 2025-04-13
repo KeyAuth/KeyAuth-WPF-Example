@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,13 +19,11 @@ namespace KeyAuth_WPF_Example
     {
         /// 
         public static api KeyAuthApp = new api(
-            name: "", // Application Name
-            ownerid: "", // Owner ID
-            secret: "", // Application Secret
-            version: "" // Application Version /*
-           //path: @"Your_Path_Here" // (OPTIONAL) see tutorial here https://www.youtube.com/watch?v=I9rxt821gMk&t=1s
-        );
-
+         name: "", // App name
+         ownerid: "", // Account ID
+         version: "" // Application version. Used for automatic downloads see video here https://www.youtube.com/watch?v=kW195PLCBKs
+                      //path: @"Your_Path_Here" // (OPTIONAL) see tutorial here https://www.youtube.com/watch?v=I9rxt821gMk&t=1s
+     );
         // VIEW https://keyauth.win/docs to see all of the functions that you can run.
 
         public Login()
@@ -36,19 +34,18 @@ namespace KeyAuth_WPF_Example
         private async void Login_Loaded(object sender, RoutedEventArgs e)
         {
             await KeyAuthApp.init();
-            MessageBox.Show(KeyAuthApp.response.message + $"\n\n It took {api.responseTime}ms to Initialize.", "KeyAuth Response");
         } 
 
         private async void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            await KeyAuthApp.login(usernameField.Text, passwordField.Text);
+            await KeyAuthApp.login(usernameField.Text, passwordField.Text, tfaField.Text);
             if (KeyAuthApp.response.success)
             {
                 Main main = new Main();
                 main.Show();
                 this.Close();
 
-                KeyAuthApp.log(usernameField.Text + " Logged In"); // this will send a log to the logs channel https://keyauth.win/app/?page=logs OR to your Discord server if you enabled Discord logs.
+                await KeyAuthApp.log(usernameField.Text + " Logged In"); // this will send a log to the logs channel https://keyauth.win/app/?page=logs OR to your Discord server if you enabled Discord logs.
             }
             else
             {
@@ -85,14 +82,14 @@ namespace KeyAuth_WPF_Example
 
         private async void licenseBtn_Click(object sender, RoutedEventArgs e)
         {
-            await KeyAuthApp.license(licenseField.Text);
+            await KeyAuthApp.license(licenseField.Text, tfaField.Text);
             if (KeyAuthApp.response.success)
             {
                 Main main = new Main();
                 main.Show();
                 this.Close();
 
-                KeyAuthApp.log(licenseField.Text + " Logged In");
+                await KeyAuthApp.log(licenseField.Text + " Logged In");
             }
             else
             {
